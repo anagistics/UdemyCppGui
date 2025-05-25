@@ -1,0 +1,27 @@
+{
+    "name": "gui",
+    "version-string": "0.1.0",
+    "builtin-baseline": "8f54ef5453e7e76ff01e15988bf243e7247c5eb5",
+    "dependencies": [
+        {
+            "name": "fmt"
+        },
+        {
+            "name": "opengl"
+        },
+        {
+            "name": "glfw3"
+        },
+        {
+            "name": "imgui",
+            "default-features": false,
+            "features": [
+                "glfw-binding",
+                "opengl3-binding"
+            ]
+        },
+        {
+            "name": "implot"
+        }
+    ]
+}
