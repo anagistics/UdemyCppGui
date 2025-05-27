@@ -53,16 +53,11 @@ void WindowClass::DrawFolderContent()
         m_needsUpdate = false; // reset the flag
     }
     for (const auto &entry : m_folderContent)
-    {
-        bool is_selected;
-        bool entry_is_directory{entry.isDirectory()};
-
-        if (ImGui::Selectable(entry.label().c_str()) && entry_is_directory)
+        if (ImGui::Selectable(entry.label().c_str()) && entry.isDirectory())
         {
             m_selectedPath = m_currentPath;
             updatePath(m_currentPath /= entry.name());
         }
-    }
 }
 
 void render(WindowClass &window_obj)
