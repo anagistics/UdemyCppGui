@@ -8,7 +8,7 @@
 
 namespace
 {
-    std::string PathToString(const fs::path& pth)
+    std::string SanitizePathString(const fs::path& pth)
     {
         std::string escaped = std::regex_replace(pth.string(), std::regex("\\\\"), "\\");
         return escaped;
@@ -34,7 +34,7 @@ void WindowClass::Draw(std::string_view label)
             updatePath(m_currentPath.parent_path());
     }
     ImGui::SameLine(); // next element appears in the same line!
-    std::string pathString{PathToString(m_currentPath)};
+    std::string pathString{SanitizePathString(m_currentPath)};
     ImGui::Text("Current folder: %s", pathString.c_str());
     ImGui::Separator();
 
